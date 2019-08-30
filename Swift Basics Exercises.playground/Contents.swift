@@ -5,13 +5,13 @@ import Cocoa
 /* Problems 0-2 require you write a function.
  
  Write it in the space below the question, and then print out what it returns using the arguments provided in the example.
-*/
+ */
 
 /*
  0. Oh, no, you've been caught speeding! You will write a function, travelling(), that will be passed in
-        a) your speed,
-        b) the speed limit,
-        c) whether it is your birthday, and then return the amount of the fine.
+ a) your speed,
+ b) the speed limit,
+ c) whether it is your birthday, and then return the amount of the fine.
  
  If it's not your birthday:
  
@@ -29,23 +29,23 @@ import Cocoa
  16-25               200
  26+                 500
  
-
+ 
  Examples:
  
-Write travelling(at:speedLimit:isBirthday:)  with an if-else statement and test it with these values:
+ Write travelling(at:speedLimit:isBirthday:)  with an if-else statement and test it with these values:
  
  travelling(at:50, speedLimit:60, isBirthday:false) -> 0
  travelling(at:50, speedLimit:45, isBirthday:false) -> 100
  travelling(at:50, speedLimit:35, isBirthday:false) -> 200
  travelling(at:50, speedLimit:35, isBirthday:true) -> 100
  
-Write travelling2(at:speedLimit:isBirthday:) with a switch statement, and test it with the same values:
+ Write travelling2(at:speedLimit:isBirthday:) with a switch statement, and test it with the same values:
  
  travelling2(at:50, speedLimit:60, isBirthday:false) -> 0
  travelling2(at:50, speedLimit:45, isBirthday:false) -> 100
  travelling2(at:50, speedLimit:35, isBirthday:false) -> 200
  travelling2(at:50, speedLimit:35, isBirthday:true) -> 100
-
+ 
  */
 
 /// Calculates ticket given the speed and speedlimit
@@ -78,6 +78,13 @@ func traveling(speed:Int, speedLimit:Int, bDay:Bool) -> Int{
     return 0
 }
 
+/// Calculates ticket given the speed and speedlimit
+///
+/// - Parameters:
+///   - speed: speed travelling at
+///   - speedLimit: max speed allowed
+///   - bDay: is today your birthday
+/// - Returns: return ticket amount
 func traveling2(speed:Int, speedLimit:Int, bDay:Bool) -> Int{
     if bDay{
         switch speed - speedLimit{
@@ -113,10 +120,10 @@ print(traveling2(speed: 50, speedLimit: 45, bDay: false))
 print(traveling2(speed: 50, speedLimit: 35, bDay: false))
 print(traveling2(speed: 50, speedLimit: 35, bDay: true))
 
- 
- /* 1. Write a function, lucky13() that is passed in an array, and returns true if it contains no 1's and no 3's, false otherwise.
-   Just use a for-in loop, subscripts, and basic logic to solve this problem, don't look for any magic framework method to solve it
 
+/* 1. Write a function, lucky13() that is passed in an array, and returns true if it contains no 1's and no 3's, false otherwise.
+ Just use a for-in loop, subscripts, and basic logic to solve this problem, don't look for any magic framework method to solve it
+ 
  Example:
  
  
@@ -125,9 +132,13 @@ print(traveling2(speed: 50, speedLimit: 35, bDay: true))
  lucky13([1, 10, 15]) -> true
  lucky13([1, 3, 10, 15]) -> true
  
+ 
+ */
 
-*/
-
+/// Check if there are number 1 and 3 in the array
+///
+/// - Parameter arr: array of integers
+/// - Returns: true if 1 or 3 was found else false
 func lucky13(arr:[Int]) -> Bool{
     for x in arr{
         if x == 1 || x == 3{
@@ -161,9 +172,17 @@ print(lucky13(arr: [1, 3, 10, 15]))
  numDaysIn(month:"February", year: 2016) -> 29
  numDaysIn(month:"February", year: 2015) -> 28
  
-
+ 
  */
 
+
+
+/// checks the month and year and return a the amount of days
+///
+/// - Parameters:
+///   - month: month in string value
+///   - year: year in int value
+/// - Returns: amount of days given the month and year
 func numDaysIn(month:String, year:Int) -> Int{
     switch month{
     case "January", "March", "May", "July", "August", "October", "December":
@@ -210,4 +229,4 @@ func myst(_ data:[Int]) -> [Int] {
 // this function takes an array and if the array has an uneven number of elements greater than 3 then it return an array of the 3 elements in the middel of the array passed. a better name for this array would be arrayMiddleThreeValues
 
 
- 
+

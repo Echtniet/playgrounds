@@ -54,9 +54,9 @@ var count = inArray(5, [5, 10, 15, 5])
 // 9. Write a function quest9(demo:), where the parameter demo will be of type (Int, [Int]) -> Int
 
 func quest9(demo:(Int, [Int]) -> Int){
-    demo(5, [50, 250, 350])
+    print(demo(5, [50, 250, 350]))
 }
 
 // 10. Invoke quest9(demo:) with the closure that you wrote in 9. Inside quest9(demo:), print out the results of invoking demo with the values 5 and [50, 250, 350].
 
-quest9(demo: <#T##(Int, [Int]) -> Int#>)
+quest9 (demo:inArray)

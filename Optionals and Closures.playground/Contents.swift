@@ -24,19 +24,18 @@ var voltageTF = UITextField()
 voltageTF.text = "25.0"
 
 // 5. Write an if-let statement that will take the contents of voltageTF, and (if possible), store half its value back in the text field. If not possible, store "0.0" in voltageTF.
-if var volt = Double(voltageTF.text!){
-    volt /= 2
-    voltageTF.text = String(volt)
+if let volt = Double(voltageTF.text!){
+    voltageTF.text = String(volt / 2)
 }else{
     voltageTF.text = String(0.0)
 }
 
 
 // 6. Write a closure with two parameters - an Int and an [Int] that will return the number of times the Int is found in the array.
-let inArray = {(x:Int, myArray:[Int]) -> Int in
+let count = {(key:Int, randomIntArray:[Int]) -> Int in
     var count = 0
-    for y in myArray{
-        if x == y {
+    for randomInt in randomIntArray{
+        if key == randomInt {
             count += 1
         }
     }
@@ -45,7 +44,7 @@ let inArray = {(x:Int, myArray:[Int]) -> Int in
 
 
 // 7. Assign the closure to a variable, count, and then invoke it with the values 5 and [5, 10, 15, 5]
-var count = inArray(5, [5, 10, 15, 5])
+count(5, [5, 10, 15, 5])
 
 
 // 8. What is the *type* of the closure that you just created?
@@ -59,4 +58,4 @@ func quest9(demo:(Int, [Int]) -> Int){
 
 // 10. Invoke quest9(demo:) with the closure that you wrote in 9. Inside quest9(demo:), print out the results of invoking demo with the values 5 and [50, 250, 350].
 
-quest9 (demo:inArray)
+quest9 (demo:count)
